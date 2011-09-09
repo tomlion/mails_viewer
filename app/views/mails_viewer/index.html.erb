@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mailer</title>
+  <%= stylesheet_link_tag "mails_viewer" %>
+  <%= javascript_include_tag "mails_viewer" %>
+  <%= csrf_meta_tags %>
+  <script type='text/javascript'>
+    $(function() {
+      $("table")
+        .tablesorter({widthFixed: true})
+        .tablesorterPager({container: $("#pager")});
+
+      $('.mail').click(function(){
+        $.get(window.location.pathname + '/raw', {filename: $(this).attr('data-mail-id')}, function(data){
+          $('#raw').text(data);
+        });
+      });
+    });
+	</script>
+  <style>
+  #list{
+    float:left;
+    width:700px;
+  }
+  #raw{
+    float:right;
+  }
+  </style>
+</head>
+<body>
+
+<div id='list'>
+<table cellspacing="1" class="tablesorter">
+  <thead><tr><th>From</th><th>To</th><th>Subject</th><th>Date</th></thead>
+  <tbody>
+    <% @mails.each_with_index do |mail, index| %>
+    <tr class='mail' data-mail-id='<%= @files[index] %>'>
+      <td><%= mail.from.join(', ') %></td>
+      <td><%= mail.to.join(', ') %></td>
+      <td><%= mail.subject %></td>
+      <td><%= mail.date %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div id="pager" class="pager">
+  <form>
+    <img src="/assets/first.png" class="first"/>
+    <img src="/assets/prev.png" class="prev"/>
+    <input type="text" class="pagedisplay"/>
+    <img src="/assets/next.png" class="next"/>
+    <img src="/assets/last.png" class="last"/>
+    <select class="pagesize">
+      <option selected="selected"  value="10">10</option>
+      <option value="20">20</option>
+      <option value="30">30</option>
+      <option  value="40">40</option>
+    </select>
+  </form>
+</div>
+</div>
+
+<pre id='raw'>
+</pre>
+
+</body>
+</html>
+
