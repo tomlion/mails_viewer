@@ -1,3 +1,4 @@
+require 'rails'
 require "mail"
 require "mails_viewer/file_delivery"
 require "mails_viewer/version"
