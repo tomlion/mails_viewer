@@ -38,7 +38,7 @@
     <tr class='mail' data-mail-id='<%= @files[index] %>'>
       <td><%= mail.from.join(', ') %></td>
       <td><%= mail.to.join(', ') %></td>
-      <td><%= mail.subject %></td>
+      <td><a href='#rawmail<%= index %>'><%= mail.subject %></a></td>
       <td><%= mail.date %></td>
     </tr>
     <% end %>
