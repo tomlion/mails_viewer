@@ -14,6 +14,11 @@ module MailsViewer
       render text: File.read(params[:filename])
     end
 
+    def html
+      mail = Mail.read(params[:filename])
+      
+      render text: mail.html_parts.first.body
+    end
 
   private
     def mails_path
@@ -25,5 +30,6 @@ module MailsViewer
         render :text => 'Mails Viewer is disabled' and return false 
       end
     end
+
   end
 end

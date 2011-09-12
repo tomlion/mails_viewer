@@ -11,9 +11,14 @@
         .tablesorter({widthFixed: true})
         .tablesorterPager({container: $("#pager")});
 
-      $('.mail').click(function(){
-        $.get(window.location.pathname + '/raw', {filename: $(this).attr('data-mail-id')}, function(data){
-          $('#raw').text(data);
+      $('.mail a').click(function(){
+        var action = $(this).attr('class');
+        $.get(window.location.pathname + '/' + action, {filename: $(this).attr('data-mail-id')}, function(data){
+          if(action === 'raw'){
+            $('#raw').text(data);
+          }else{
+            $('#raw').html(data);
+          }
         });
       });
     });
@@ -35,10 +40,18 @@
   <thead><tr><th>From</th><th>To</th><th>Subject</th><th>Date</th></thead>
   <tbody>
     <% @mails.each_with_index do |mail, index| %>
-    <tr class='mail' data-mail-id='<%= @files[index] %>'>
+    <tr class='mail'>
       <td><%= mail.from.join(', ') %></td>
       <td><%= mail.to.join(', ') %></td>
-      <td><a href='#rawmail<%= mail.date.to_i.to_s %>'><%= mail.subject %></a></td>
+      <% if (html_parts = mail.html_parts).present? %>
+        <td>
+          <%= mail.subject %>
+          <a href='#rawmail<%= mail.date.to_i.to_s %>' class='raw' data-mail-id='<%= @files[index] %>'>raw</a>
+          <a href='#htmlmail<%= mail.date.to_i.to_s %>' class='html' data-mail-id='<%= @files[index] %>'>html</a>
+        </td>
+      <% else %>
+        <td><a href='#rawmail<%= mail.date.to_i.to_s %>' class='raw' data-mail-id='<%= @files[index] %>'><%= mail.subject %></a></td>
+      <% end %>
       <td><%= mail.date %></td>
     </tr>
     <% end %>
