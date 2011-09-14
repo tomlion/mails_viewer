@@ -17,7 +17,7 @@ module MailsViewer
     def html
       mail = Mail.read(params[:filename])
       
-      render text: mail.html_parts.first.body
+      render text: mail.html_part.body
     end
 
   private

@@ -39,7 +39,7 @@
             <tr class='mail'>
               <td><%= mail.from.join(', ') %></td>
               <td><%= mail.to.join(', ') %></td>
-              <% if (html_parts = mail.html_parts).present? %>
+              <% if mail.html_part.present? %>
                 <td>
                   <%= mail.subject %>
                   <a href='raw?filename=<%= @files[index] %>' class='raw'>raw</a>
