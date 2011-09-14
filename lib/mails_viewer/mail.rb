@@ -2,11 +2,13 @@ module Mail
   class Message
 
     def html_parts
-      all_parts.select{|part| part.content_type =~ /text\/html/ }
+      find_first_mime_type('text/html')
     end
 
-    def all_parts
-      multipart? ? parts.inject([]){|messages, part| messages += part.all_parts } : [self]
+    # Save the mail to seperate files when have several destination addresses
+    # This function used to return a filename by mail's date and destination address
+    def filename_for(to)
+      "#{date.to_time.to_i}.#{to}.txt"
     end
 
   end

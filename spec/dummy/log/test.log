@@ -44,3 +44,459 @@ To login to the site, just follow this link:
  
 Thanks for joining and have a great day!
 
+Rendered user_mailer/welcome_email.text.erb (7.3ms)
+
+Sent mail to test@intridea.com (35ms)
+Date: Wed, 14 Sep 2011 15:58:43 +0800
+From: from@example.com
+To: test@intridea.com
+Message-ID: <4e705eb337acd_962880434f4c1335@Youcais-iMac.local.mail>
+Subject: Welcome to Example.com
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to example.com, name
+===============================================
+ 
+You have successfully signed up to example.com,
+your username is: login.
+ 
+To login to the site, just follow this link:
+ 
+Thanks for joining and have a great day!
+
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (1.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20110908023301)
+  [1m[35m (0.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "login" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20110908023301')[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" LIMIT 1
+  [1m[36m (1.5ms)[0m  [1mDROP TABLE "schema_migrations"[0m
+  [1m[35m (1.5ms)[0m  DROP TABLE "users"
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (1.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20110908023301)
+  [1m[35m (0.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "login" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20110908023301')[0m
+  [1m[35mSQL (45.9ms)[0m  INSERT INTO "users" ("created_at", "email", "login", "name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Wed, 14 Sep 2011 08:26:16 UTC +00:00], ["email", "test@intridea.com"], ["login", "tomlion"], ["name", "Youcai Qian"], ["updated_at", Wed, 14 Sep 2011 08:26:16 UTC +00:00]]
+Rendered user_mailer/welcome_email.text.erb (7.0ms)
+
+Sent mail to test@intridea.com (34ms)
+Date: Wed, 14 Sep 2011 16:26:16 +0800
+From: from@example.com
+To: test@intridea.com
+Message-ID: <4e706528c4716_985f80434f4c646d@Youcais-iMac.local.mail>
+Subject: Welcome to Example.com
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to example.com, Youcai Qian
+===============================================
+ 
+You have successfully signed up to example.com,
+your username is: tomlion.
+ 
+To login to the site, just follow this link:
+ 
+Thanks for joining and have a great day!
+
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 1]]
+  [1m[36m (1.5ms)[0m  [1mDROP TABLE "schema_migrations"[0m
+  [1m[35m (1.5ms)[0m  DROP TABLE "users"
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (1.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20110908023301)
+  [1m[35m (0.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "login" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20110908023301')[0m
+  [1m[35mSQL (9.2ms)[0m  INSERT INTO "users" ("created_at", "email", "login", "name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Wed, 14 Sep 2011 08:31:34 UTC +00:00], ["email", "test@intridea.com"], ["login", "tomlion"], ["name", "Youcai Qian"], ["updated_at", Wed, 14 Sep 2011 08:31:34 UTC +00:00]]
+Rendered user_mailer/welcome_email.text.erb (6.3ms)
+
+Sent mail to test@intridea.com (31ms)
+Date: Wed, 14 Sep 2011 16:31:34 +0800
+From: from@example.com
+To: test@intridea.com
+Message-ID: <4e706666d65b4_98bc80434f4c492bb@Youcais-iMac.local.mail>
+Subject: Welcome to Example.com
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to example.com, Youcai Qian
+===============================================
+ 
+You have successfully signed up to example.com,
+your username is: tomlion.
+ 
+To login to the site, just follow this link:
+ 
+Thanks for joining and have a great day!
+
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 1]]
+  [1m[36m (1.4ms)[0m  [1mDROP TABLE "schema_migrations"[0m
+  [1m[35m (1.7ms)[0m  DROP TABLE "users"
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (1.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20110908023301)
+  [1m[35m (0.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "login" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20110908023301')[0m
+  [1m[35mSQL (9.5ms)[0m  INSERT INTO "users" ("created_at", "email", "login", "name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Wed, 14 Sep 2011 08:32:23 UTC +00:00], ["email", "test@intridea.com"], ["login", "tomlion"], ["name", "Youcai Qian"], ["updated_at", Wed, 14 Sep 2011 08:32:23 UTC +00:00]]
+Rendered user_mailer/welcome_email.text.erb (6.4ms)
+
+Sent mail to test@intridea.com (30ms)
+Date: Wed, 14 Sep 2011 16:32:23 +0800
+From: from@example.com
+To: test@intridea.com
+Message-ID: <4e706697770b9_98d180434f4c505d@Youcais-iMac.local.mail>
+Subject: Welcome to Example.com
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to example.com, Youcai Qian
+===============================================
+ 
+You have successfully signed up to example.com,
+your username is: tomlion.
+ 
+To login to the site, just follow this link:
+ 
+Thanks for joining and have a great day!
+
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 1]]
+  [1m[36m (1.5ms)[0m  [1mDROP TABLE "schema_migrations"[0m
+  [1m[35m (1.5ms)[0m  DROP TABLE "users"
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (1.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20110908023301)
+  [1m[35m (0.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "login" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20110908023301')[0m
+  [1m[35mSQL (8.4ms)[0m  INSERT INTO "users" ("created_at", "email", "login", "name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Wed, 14 Sep 2011 08:34:41 UTC +00:00], ["email", "test@intridea.com"], ["login", "tomlion"], ["name", "Youcai Qian"], ["updated_at", Wed, 14 Sep 2011 08:34:41 UTC +00:00]]
+Rendered user_mailer/welcome_email.text.erb (5.9ms)
+
+Sent mail to test@intridea.com (32ms)
+Date: Wed, 14 Sep 2011 16:34:42 +0800
+From: from@example.com
+To: test@intridea.com
+Message-ID: <4e706721f3059_990580434f4c78621@Youcais-iMac.local.mail>
+Subject: Welcome to Example.com
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to example.com, Youcai Qian
+===============================================
+ 
+You have successfully signed up to example.com,
+your username is: tomlion.
+ 
+To login to the site, just follow this link:
+ 
+Thanks for joining and have a great day!
+
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 1]]
+  [1m[36m (1.7ms)[0m  [1mDROP TABLE "schema_migrations"[0m
+  [1m[35m (2.0ms)[0m  DROP TABLE "users"
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.6ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (1.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20110908023301)
+  [1m[35m (0.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "login" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20110908023301')[0m
+  [1m[35mSQL (46.4ms)[0m  INSERT INTO "users" ("created_at", "email", "login", "name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Wed, 14 Sep 2011 09:07:22 UTC +00:00], ["email", "test@intridea.com"], ["login", "tomlion"], ["name", "Youcai Qian"], ["updated_at", Wed, 14 Sep 2011 09:07:22 UTC +00:00]]
+Rendered user_mailer/welcome_email.text.erb (7.5ms)
+
+Sent mail to test@intridea.com (55ms)
+Date: Wed, 14 Sep 2011 17:07:22 +0800
+From: from@example.com
+To: test@intridea.com
+Message-ID: <4e706ecad065e_9bbe80434f4c89862@Youcais-iMac.local.mail>
+Subject: Welcome to Example.com
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to example.com, Youcai Qian
+===============================================
+ 
+You have successfully signed up to example.com,
+your username is: tomlion.
+ 
+To login to the site, just follow this link:
+ 
+Thanks for joining and have a great day!
+
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 1]]
+  [1m[36m (2.6ms)[0m  [1mDROP TABLE "schema_migrations"[0m
+  [1m[35m (1.6ms)[0m  DROP TABLE "users"
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (1.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20110908023301)
+  [1m[35m (0.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "login" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20110908023301')[0m
+  [1m[35mSQL (9.3ms)[0m  INSERT INTO "users" ("created_at", "email", "login", "name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Wed, 14 Sep 2011 09:08:10 UTC +00:00], ["email", "test@intridea.com"], ["login", "tomlion"], ["name", "Youcai Qian"], ["updated_at", Wed, 14 Sep 2011 09:08:10 UTC +00:00]]
+Rendered user_mailer/welcome_email.text.erb (6.8ms)
+
+Sent mail to test@intridea.com (109ms)
+Date: Wed, 14 Sep 2011 17:08:10 +0800
+From: from@example.com
+To: test@intridea.com
+Message-ID: <4e706efa457cb_9bd280434f4c226b9@Youcais-iMac.local.mail>
+Subject: Welcome to Example.com
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to example.com, Youcai Qian
+===============================================
+ 
+You have successfully signed up to example.com,
+your username is: tomlion.
+ 
+To login to the site, just follow this link:
+ 
+Thanks for joining and have a great day!
+
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 1]]
+  [1m[36m (1.5ms)[0m  [1mDROP TABLE "schema_migrations"[0m
+  [1m[35m (1.7ms)[0m  DROP TABLE "users"
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (1.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20110908023301)
+  [1m[35m (0.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "login" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20110908023301')[0m
+  [1m[35mSQL (8.5ms)[0m  INSERT INTO "users" ("created_at", "email", "login", "name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Wed, 14 Sep 2011 09:08:50 UTC +00:00], ["email", "test@intridea.com"], ["login", "tomlion"], ["name", "Youcai Qian"], ["updated_at", Wed, 14 Sep 2011 09:08:50 UTC +00:00]]
+Rendered user_mailer/welcome_email.text.erb (7.2ms)
+
+Sent mail to test@intridea.com (36ms)
+Date: Wed, 14 Sep 2011 17:08:50 +0800
+From: from@example.com
+To: test@intridea.com
+Message-ID: <4e706f229d50b_9be580434f4c205ed@Youcais-iMac.local.mail>
+Subject: Welcome to Example.com
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to example.com, Youcai Qian
+===============================================
+ 
+You have successfully signed up to example.com,
+your username is: tomlion.
+ 
+To login to the site, just follow this link:
+ 
+Thanks for joining and have a great day!
+
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 1]]
+  [1m[36m (41.7ms)[0m  [1mDROP TABLE "schema_migrations"[0m
+  [1m[35m (32.1ms)[0m  DROP TABLE "users"
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (11.6ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (2.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20110908023301)
+  [1m[35m (0.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "login" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20110908023301')[0m
+  [1m[35mSQL (33.4ms)[0m  INSERT INTO "users" ("created_at", "email", "login", "name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Wed, 14 Sep 2011 09:15:23 UTC +00:00], ["email", "test@intridea.com"], ["login", "tomlion"], ["name", "Youcai Qian"], ["updated_at", Wed, 14 Sep 2011 09:15:23 UTC +00:00]]
+Rendered user_mailer/welcome_email.html.erb (6.8ms)
+Rendered user_mailer/welcome_email.text.erb (0.3ms)
+
+Sent mail to test@intridea.com (61ms)
+Date: Wed, 14 Sep 2011 17:15:23 +0800
+From: from@example.com
+To: test@intridea.com
+Message-ID: <4e7070ab4264d_9c5a80434f4c715ab@Youcais-iMac.local.mail>
+Subject: Welcome to Example.com
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_4e7070ab355df_9c5a80434f4c71269";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+
+----==_mimepart_4e7070ab355df_9c5a80434f4c71269
+Date: Wed, 14 Sep 2011 17:15:23 +0800
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Content-ID: <4e7070ab3df9b_9c5a80434f4c713bc@Youcais-iMac.local.mail>
+
+Welcome to example.com, Youcai Qian
+===============================================
+ 
+You have successfully signed up to example.com,
+your username is: tomlion.
+ 
+To login to the site, just follow this link:
+ 
+Thanks for joining and have a great day!
+
+
+
+----==_mimepart_4e7070ab355df_9c5a80434f4c71269
+Date: Wed, 14 Sep 2011 17:15:23 +0800
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Content-ID: <4e7070ab40ad8_9c5a80434f4c7142@Youcais-iMac.local.mail>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Welcome to example.com, Youcai Qian</h1>
+    <p>
+      You have successfully signed up to example.com,
+      your username is: tomlion.<br/>
+    </p>
+    <p>
+      To login to the site, just follow this link: http://example.com/login.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+
+
+----==_mimepart_4e7070ab355df_9c5a80434f4c71269--
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 1]]
+  [1m[36m (1.5ms)[0m  [1mDROP TABLE "schema_migrations"[0m
+  [1m[35m (1.8ms)[0m  DROP TABLE "users"
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (1.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20110908023301)
+  [1m[35m (0.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "login" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20110908023301')[0m
+  [1m[35mSQL (10.4ms)[0m  INSERT INTO "users" ("created_at", "email", "login", "name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Wed, 14 Sep 2011 09:17:43 UTC +00:00], ["email", "test@intridea.com"], ["login", "tomlion"], ["name", "Youcai Qian"], ["updated_at", Wed, 14 Sep 2011 09:17:43 UTC +00:00]]
+Rendered user_mailer/welcome_email.html.erb (7.6ms)
+Rendered user_mailer/welcome_email.text.erb (0.3ms)
+
+Sent mail to test@intridea.com (52ms)
+Date: Wed, 14 Sep 2011 17:17:43 +0800
+From: from@example.com
+To: test@intridea.com
+Message-ID: <4e7071372fe8c_9c7f80434f4c957f1@Youcais-iMac.local.mail>
+Subject: Welcome to Example.com
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_4e70713725715_9c7f80434f4c954f1";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+
+----==_mimepart_4e70713725715_9c7f80434f4c954f1
+Date: Wed, 14 Sep 2011 17:17:43 +0800
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Content-ID: <4e7071372b39d_9c7f80434f4c955fb@Youcais-iMac.local.mail>
+
+Welcome to example.com, Youcai Qian
+===============================================
+ 
+You have successfully signed up to example.com,
+your username is: tomlion.
+ 
+To login to the site, just follow this link:
+ 
+Thanks for joining and have a great day!
+
+
+
+----==_mimepart_4e70713725715_9c7f80434f4c954f1
+Date: Wed, 14 Sep 2011 17:17:43 +0800
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Content-ID: <4e7071372e267_9c7f80434f4c9562a@Youcais-iMac.local.mail>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Welcome to example.com, Youcai Qian</h1>
+    <p>
+      You have successfully signed up to example.com,
+      your username is: tomlion.<br/>
+    </p>
+    <p>
+      To login to the site, just follow this link: http://example.com/login.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+
+
+----==_mimepart_4e70713725715_9c7f80434f4c954f1--
+Rendered user_mailer/multi_destinations_email.text.erb (0.4ms)
+
+Sent mail to test@intridea.com, youcia@intridea.com (8ms)
+Date: Wed, 14 Sep 2011 17:17:43 +0800
+From: from@example.com
+To: test@intridea.com, 
+ youcia@intridea.com
+Message-ID: <4e707137397e7_9c7f80434f4c95879@Youcais-iMac.local.mail>
+Subject: Hello world. CC: youcai
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hello world!! Youcai Qian
+===============================================
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 1]]
