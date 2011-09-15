@@ -26,6 +26,15 @@
     });
   </script>
   <style>
+  #pager{
+    padding-top: 10px;
+  }
+  #pager img{
+    vertical-align: middle;
+  }
+  #raw{
+    margin-top: 50px;
+  }
   </style>
 </head>
 <body>
@@ -72,11 +81,11 @@
 
       <div id="pager" class="pager">
         <form>
-          <img src="/assets/first.png" class="first"/>
-          <img src="/assets/prev.png" class="prev"/>
+          <img src="/assets/tablesorter/first.png" class="first"/>
+          <img src="/assets/tablesorter/prev.png" class="prev"/>
           <input type="text" class="pagedisplay"/>
-          <img src="/assets/next.png" class="next"/>
-          <img src="/assets/last.png" class="last"/>
+          <img src="/assets/tablesorter/next.png" class="next"/>
+          <img src="/assets/tablesorter/last.png" class="last"/>
           <select class="pagesize">
             <option selected="selected"  value="10">10</option>
             <option value="20">20</option>
@@ -88,6 +97,7 @@
     </div>
 
     <pre id='raw'>
+      <h3>Click link above to view original email content here!</h3>
     </pre>
   </div>
 </body>
