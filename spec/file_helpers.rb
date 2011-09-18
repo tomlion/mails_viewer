@@ -1,7 +1,9 @@
 module FileHelpers
 
   def delete_all_mails
-    FileUtils.rm_r(::File.expand_path('../dummy/tmp/', __FILE__))
+    FileUtils.rm_r(::File.expand_path('../dummy/tmp/mails/', __FILE__))
+  rescue
+    true
   end
 
   def has_file?(file)
