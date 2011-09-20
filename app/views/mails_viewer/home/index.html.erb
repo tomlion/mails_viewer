@@ -12,7 +12,7 @@
 
       $('.mail a').each(function(){
         var href = $(this).attr('href');
-        href = window.location.pathname + '/' + href;
+        href = <%= root_path %> + href;
         $(this).attr('href', href);
       });
       $('.mail a.html').colorbox({width:"80%", height:"80%", iframe:true});
