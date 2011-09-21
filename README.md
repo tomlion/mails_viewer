@@ -7,8 +7,8 @@
 
 * MailsViewer should be used with Rails 3.1
 
-* In your config file, You should `require "sprockets/railtie" `if you don't `require 'rails/all'`
-and enable assets pipeline by adding `config.assets.enabled = true` to config file
+* <del>In your config file, You should `require "sprockets/railtie" `if you don't `require 'rails/all'`
+and enable assets pipeline by adding `config.assets.enabled = true` to config file</del>  This branch didn't need Sprockets, it serves static assets directly!
 
 ### Usage
 
