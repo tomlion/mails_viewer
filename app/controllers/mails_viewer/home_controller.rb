@@ -16,13 +16,15 @@ module MailsViewer
 
     def html
       mail = Mail.read(params[:filename])
-      
       render text: mail.html_part.body
     end
 
+
   private
     def mails_path
-      File.join(Rails.root, "tmp", "mails")
+      path = Rails.application.config.action_mailer.file_settings.try(:[], :location) || './tmp/mails'
+      path = File.join(Rails.root, path) unless path.start_with?('/')
+      path
     end
 
     def disabled_on_production
