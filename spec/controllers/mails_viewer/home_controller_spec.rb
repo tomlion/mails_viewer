@@ -3,6 +3,10 @@ require 'spec_helper'
 describe MailsViewer::HomeController do
   render_views
 
+  let(:mails_root) { File.join(Rails.root, "tmp", "mails") }
+  let(:mail_files) { Dir.chdir(mails_root) { Dir['**/*'].select{|f| File.file?(f)} } }
+  let(:mail_file) { mail_files.first }
+  
   before :all do
     env = Rack::MockRequest.env_for("/?user[email]=a@b.com&user[name]=name&user[login]=login", "REQUEST_METHOD" => "POST")
     UsersController.action(:create).call(env)
@@ -23,23 +27,17 @@ describe MailsViewer::HomeController do
   end
 
   describe "GET raw" do
-    before do
-      @file = Dir[ File.join(Rails.root, "tmp", "mails") + "/**/*"].select{|f| File.file?(f)}.first
-    end
     it "should return mail raw data" do
-      get :raw, :filename => @file,  :use_route => :mails_viewer
-      response.body.should == File.read(@file)
+      get :raw, :filename => mail_file,  :use_route => :mails_viewer
+      response.body.should == File.read(File.join(mails_root, mail_file))
     end
   end
 
   describe "GET html" do
-    before do
-      @file = Dir[ File.join(Rails.root, "tmp", "mails") + "/**/*"].select{|f| File.file?(f)}.first
-      @mail = Mail.read(@file)
-    end
+    let(:mail) { Mail.read(File.join(mails_root, mail_file)) }
     it "should return mail html part" do
-      get :html, :filename => @file, :use_route => :mails_viewer
-      response.body.to_s.should == @mail.html_part.body.to_s
+      get :html, :filename => mail_file, :use_route => :mails_viewer
+      response.body.to_s.should == mail.html_part.body.to_s
     end
   end
 
