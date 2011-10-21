@@ -40,22 +40,22 @@
 <body>
 
   <div class="container">
-    <div id='list'>
+    <div id="list">
       <table class="tablesorter">
         <thead><tr><th>From</th><th>To</th><th>Subject</th><th>Date</th></thead>
         <tbody>
           <% @mails.each_with_index do |mail, index| %>
-            <tr class='mail'>
+            <tr class="mail">
               <td><%= mail.from.join(', ') %></td>
               <td><%= mail.to.join(', ') %></td>
               <% if mail.html_part.present? %>
                 <td>
                   <%= mail.subject %>
-                  <a href='raw?filename=<%= @files[index] %>' class='raw'>raw</a>
-                  <a href='html?filename=<%= @files[index] %>' class='html'>html</a>
+                  <a href="<%= email_path(@files[index], :raw) %>" class="raw">raw</a>
+                  <a href="<%= email_path(@files[index], :html) %>" class="html">html</a>
                 </td>
               <% else %>
-                <td><a href='raw?filename=<%= @files[index] %>' class='raw'><%= mail.subject %></a></td>
+                <td><a href="<%= email_path(@files[index], :html) %>" class="raw"><%= mail.subject %></a></td>
               <% end %>
               <td><%= mail.date %></td>
             </tr>
