@@ -6,10 +6,9 @@ module MailsViewer
 
     def index
       Dir.chdir(mails_path) do
-        @files = Dir["**/*"].select{|f| File.file?(f)}
-        @mails = @files.inject([]) do |mails, f|
-          mails << Mail.read(File.join(f)) 
-        end
+        @mails = Dir["**/*"]
+          .select{|f| File.file?(f)}
+          .map{|f| [Mail.read(f), f]}
       end
     end
 
@@ -39,7 +38,7 @@ module MailsViewer
 
     def disabled_on_production
       if Rails.env == 'production' || Rails.application.config.action_mailer.delivery_method.to_sym != :file
-        render :text => 'Mails Viewer is disabled' and return false 
+        render :text => 'Mails Viewer is disabled' and return false
       end
     end
 
@@ -53,6 +52,6 @@ module MailsViewer
         end
       end
     end
-    
+
   end
 end
