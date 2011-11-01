@@ -55,7 +55,7 @@
                   <a href="<%= email_path(@files[index], :html) %>" class="html">html</a>
                 </td>
               <% else %>
-                <td><a href="<%= email_path(@files[index], :html) %>" class="raw"><%= mail.subject %></a></td>
+                <td><a href="<%= email_path(@files[index], :raw) %>" class="raw"><%= mail.subject %></a></td>
               <% end %>
               <td><%= mail.date %></td>
             </tr>
