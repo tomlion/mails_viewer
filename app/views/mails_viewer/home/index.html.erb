@@ -55,7 +55,8 @@
                   <a href="<%= email_path(filename, :html) %>" class="html">html</a>
                 </td>
               <% else %>
-                <td><a href="<%= email_path(filename, :raw) %>" class="raw"><%= mail.subject %></a></td>
+                <% t = mail.content_type =~ /^text\/html;/ ? :html : :raw %>
+                <td><a href="<%= email_path(filename, t) %>" class="<%= t %>"><%= mail.subject %></a></td>
               <% end %>
               <td><%= mail.date %></td>
             </tr>
