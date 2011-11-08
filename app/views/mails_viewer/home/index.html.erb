@@ -10,11 +10,6 @@
     $(function() {
       $("table").tablesorter({widthFixed: true}).tablesorterPager({container: $("#pager")});
 
-      $('.mail a').each(function(){
-        var href = $(this).attr('href');
-        href = <%= root_path %> + href;
-        $(this).attr('href', href);
-      });
       $('.mail a.html').colorbox({width:"80%", height:"80%", iframe:true});
       $('.mail a.raw').click(function(){
         $.get($(this).attr('href'), function(data){
