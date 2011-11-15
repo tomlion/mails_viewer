@@ -17,4 +17,7 @@ $(function() {
     return false;
   });
 
+  var fix_top = parseInt($('#pager').css('top'), 10) + 60 + 'px';
+  $('#raw').css('position', 'absolute');
+  $('#raw').css('top', fix_top);
 });

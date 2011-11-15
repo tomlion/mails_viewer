@@ -6,14 +6,18 @@
  *= require_tree . 
 */
 
-#pager{
-  padding-top: 10px;
+#pager {
+  margin-top: 10px;
 }
 
-#pager img{
-  vertical-align: middle;
+.pagedisplay {
+  width: 56px;
+}
+
+.pagesize {
+  width: 56px;
 }
 
 #raw{
-  margin-top: 50px;
+  width: 906px;
 }
