@@ -6,3 +6,18 @@
  *= require_tree . 
 */
 
+#pager {
+  margin-top: 10px;
+}
+
+.pagedisplay {
+  width: 56px;
+}
+
+.pagesize {
+  width: 56px;
+}
+
+#raw{
+  width: 906px;
+}
