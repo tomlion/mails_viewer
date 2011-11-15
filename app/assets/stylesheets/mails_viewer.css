@@ -6,3 +6,14 @@
  *= require_tree . 
 */
 
+#pager{
+  padding-top: 10px;
+}
+
+#pager img{
+  vertical-align: middle;
+}
+
+#raw{
+  margin-top: 50px;
+}

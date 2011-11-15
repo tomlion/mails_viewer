@@ -6,31 +6,6 @@
   <%= stylesheet_link_tag "mails_viewer" %>
   <%= javascript_include_tag "mails_viewer" %>
   <%= csrf_meta_tags %>
-  <script type='text/javascript'>
-    $(function() {
-      $("table").tablesorter({widthFixed: true}).tablesorterPager({container: $("#pager")});
-
-      $('.mail a.html').colorbox({width:"80%", height:"80%", iframe:true});
-      $('.mail a.raw').click(function(){
-        $.get($(this).attr('href'), function(data){
-          $('#raw').text(data);
-        });
-        return false;
-      });
-
-    });
-  </script>
-  <style>
-  #pager{
-    padding-top: 10px;
-  }
-  #pager img{
-    vertical-align: middle;
-  }
-  #raw{
-    margin-top: 50px;
-  }
-  </style>
 </head>
 <body>
 
@@ -53,7 +28,7 @@
                 <% t = mail.content_type =~ /^text\/html;/ ? :html : :raw %>
                 <td><a href="<%= email_path(filename, t) %>" class="<%= t %>"><%= mail.subject %></a></td>
               <% end %>
-              <td><%= mail.date %></td>
+              <td><%= mail.date.to_s(:long) %></td>
             </tr>
           <% end %>
         </tbody>
@@ -98,4 +73,3 @@
   </div>
 </body>
 </html>
-
