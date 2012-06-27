@@ -7,7 +7,7 @@ module MailsViewer
     isolate_namespace MailsViewer
 
     # Enabling assets precompiling under rails 3.1
-    if Rails.version >= '3.1'
+    if Rails.version >= '3.1' && Rails.env != 'production'
       initializer :assets do |app|
         app.config.assets.precompile += %w(mails_viewer.js mails_viewer.css)
       end
