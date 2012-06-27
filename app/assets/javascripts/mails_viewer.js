@@ -11,7 +11,7 @@ $(function() {
 
   $('.mail a.raw').live('click', function(){
     $.get($(this).attr('href'), function(data){
-      $('#raw').text(data);
+      $('#raw div').text(data);
     });
     return false;
   });
@@ -22,8 +22,4 @@ $(function() {
   }).tablesorterPager({
     container: $("#pager")
   });
-
-  var fix_top = parseInt($('#pager').css('top'), 10) + 60 + 'px';
-  $('#raw').css('position', 'absolute');
-  $('#raw').css('top', fix_top);
 });
