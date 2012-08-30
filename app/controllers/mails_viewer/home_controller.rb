@@ -2,7 +2,7 @@ module MailsViewer
   class HomeController < ActionController::Base
     layout false
     before_filter :disabled_on_production
-    before_filter :find_absolute_filename, :only => [:raw, :html]
+    before_filter :find_absolute_filename, :only => [:raw, :html, :attachment]
 
     def index
       Dir.chdir(mails_path) do
@@ -29,6 +29,18 @@ module MailsViewer
       end
     end
 
+    def attachment
+      if @filename
+        mail = Mail.read(@filename)
+        attachment = mail.attachments[params[:attachment]]
+
+        if attachment
+          send_data attachment.body.decoded, filename: params[:attachment], type: attachment.content_type and return
+        end
+      end
+
+      head :not_found
+    end
 
   private
     def mails_path

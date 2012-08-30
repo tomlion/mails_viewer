@@ -23,6 +23,9 @@
                   <%= mail.subject %>
                   <a href="<%= email_path(filename, :raw) %>" class="raw">raw</a>
                   <a href="<%= email_path(filename, :html) %>" class="html">html</a>
+                  <% mail.attachments.each do |attachment| %>
+                    <a href="<%= attachment_path(filename, attachment.filename) %>" class="attachment" target="_blank"><%= attachment.filename %></a>
+                  <% end %>
                 </td>
               <% else %>
                 <% t = mail.content_type =~ /^text\/html;/ ? :html : :raw %>
