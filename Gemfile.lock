@@ -1,9 +1,8 @@
 PATH
   remote: .
   specs:
-    mails_viewer (0.0.1)
-      mail
-      rails (>= 3.0.0)
+    mails_viewer (0.0.2)
+      rails (>= 3.1.0)
 
 GEM
   remote: http://rubygems.org/
@@ -142,7 +141,9 @@ DEPENDENCIES
   guard
   guard-bundler
   guard-rspec
+  mail (~> 2.4.0)
   mails_viewer!
+  rspec (~> 2.11.0)
   rspec-instafail (~> 0.1.8)
   rspec-rails
   sqlite3

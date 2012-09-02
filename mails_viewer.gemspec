@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = "A mails preview Engine which provides a table view for all mails under tmp/mails."
   s.description = "A mails preview Engine which provides a table view for all mails under tmp/mails."
 
-  s.files = Dir["{app,config,lib}/**/*"] + ["MIT-LICENSE", "Rakefile",  "README.md"] - ["Gemfile.lock"]
+  s.files = Dir["{app,config,lib}/**/*"] + ["LICENSE", "Gemfile", "Rakefile",  "README.md"] - ["Gemfile.lock"]
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", ">= 3.1.0"

@@ -19,12 +19,11 @@
               <td><%= mail.to.join(', ') %></td>
               <td>
                 <%= mail.subject %>
-                <% if mail.multipart? %>
+                <% if mail.html_part || mail.content_type =~ /html/ %>
                   <a href="<%= email_path(filename, :html) %>" class="html preview">html</a>
+                <% end %>
+                <% if mail.text_part || mail.content_type =~ /plain/ %>
                   <a href="<%= email_path(filename, :plain) %>" class="plain preview">plain</a>
-                <% else %>
-                  <% t = mail.content_type =~ /html/ ? :html : :text %>
-                  <a href="<%= email_path(filename, t) %>" class="<%= t %>"><%= mail.subject %></a>
                 <% end %>
 
                 <% mail.attachments.each do |attachment| %>

@@ -23,7 +23,7 @@ module MailsViewer
     def html
       if @filename
         mail = Mail.read(@filename)
-        body = mail.html_part.body
+        body = mail.html_part ? mail.html_part.body : mail.body
         render text: body
       else
         head :not_found
@@ -33,7 +33,7 @@ module MailsViewer
     def plain
       if @filename
         mail = Mail.read(@filename)
-        @body = mail.text_part.body.to_s
+        @body = mail.text_part ? mail.text_part.body.to_s : mail.body.to_s
       else
         head :not_found
       end

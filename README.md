@@ -17,7 +17,7 @@ and enable assets pipeline by adding `config.assets.enabled = true` to config fi
 
 Add the gem to your Gemfile :
 
-    gem "mails_viewer",
+    gem "mails_viewer"
 
 put this in your routes.rb:
 
