@@ -19,11 +19,15 @@ Add the gem to your Gemfile :
 
     gem "mails_viewer"
 
+Set ActionMailer's delivery method to :file :
+
+    config.action_mailer.delivery_method = :file
+
 put this in your routes.rb:
 
     mount MailsViewer::Engine => '/delivered_mails'
 
-Now just load upt http://localhost:3000/delivered_mails
+Now just load up http://localhost:3000/delivered_mails
 
 Credits
 -------
