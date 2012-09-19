@@ -40,23 +40,23 @@ Now just load up http://localhost:3000/delivered_mails
 You can choose to send out some mails to the inbox instead of just
 storing them in the file system by specifying which mails to sent:
 
-- `: sent_if`          - Send mails that satisfy some condition
+- `: send_if`          - Send mails that satisfy some condition
 
 ```ruby
 config.action_mailer.delivery_method = :file
 config.action_mailer.file_settings = {
-        location: 'tmp/mails',
-        smtp_settings: {
-          address:              "localhost",
-          port:                 25,
-          domain:               'localhost.localdomain',
-          user_name:            nil,
-          password:             nil,
-          authentication:       nil,
-          enable_starttls_auto: true
-        },
-        sent_if: lambda { |mail| mail.destinations.select { |address| ["yedingding@gmail.com"].include?(address) }.any?
-      }
+  location: 'tmp/mails',
+  smtp_settings: {
+    address:              "localhost",
+    port:                 25,
+    domain:               'localhost.localdomain',
+    user_name:            nil,
+    password:             nil,
+    authentication:       nil,
+    enable_starttls_auto: true
+  },
+  send_if: lambda { |mail| mail.destinations.select { |address| ["yedingding@gmail.com"].include?(address) }.any?
+}
 ```
 
 Now any mails sent to yedingding@gmail.com will not only store in the

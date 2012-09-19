@@ -18,8 +18,8 @@ Mail::FileDelivery.class_eval do
   end
 
   def conditionally_sent(mail)
-    if settings[:sent_if] && settings[:smtp_settings]
-      settings[:sent_if].call(mail)
+    if settings[:send_if] && settings[:smtp_settings]
+      settings[:send_if].call(mail)
     end
   rescue Exception => ex
     false
