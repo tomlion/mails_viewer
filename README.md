@@ -55,7 +55,7 @@ config.action_mailer.file_settings = {
     authentication:       nil,
     enable_starttls_auto: true
   },
-  send_if: lambda { |mail| mail.destinations.select { |address| ["yedingding@gmail.com"].include?(address) }.any?
+  send_if: lambda { |mail| mail.destinations.select { |address| ["yedingding@gmail.com"].include?(address) }.any? }
 }
 ```
 
