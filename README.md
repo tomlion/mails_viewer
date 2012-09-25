@@ -19,6 +19,4 @@ and enable assets pipeline by adding `config.assets.enabled = true` to config fi
 
 * then visit http://server/mails_controller_path_that_you_like 
 
-[![endorse](http://api.coderwall.com/qycpublic/endorsecount.png)](http://coderwall.com/qycpublic)
-
 This project rocks and uses MIT-LICENSE.
