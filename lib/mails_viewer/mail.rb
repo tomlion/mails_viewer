@@ -3,7 +3,8 @@ module Mail
     # Save the mail to separate files when have several destination addresses
     # This function used to return a filename by mail's date and destination address
     def filename_for(to)
-      "#{Time.now.to_i}.#{to}.txt"
+      timestamp = (date && date.to_time) || Time.now
+      "#{timestamp.to_i}.#{to}.txt"
     end
   end
 end
