@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    mails_viewer (0.0.2)
+    mails_viewer (0.0.3)
       rails (>= 3.1.0)
 
 GEM
@@ -128,7 +128,7 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (0.3.33)
+    tzinfo (0.3.35)
     xpath (0.1.4)
       nokogiri (~> 1.3)
 

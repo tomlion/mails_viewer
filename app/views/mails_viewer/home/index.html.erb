@@ -11,12 +11,16 @@
   <div class="container">
     <div id="list">
       <table class="tablesorter">
-        <thead><tr><th>From</th><th>To</th><th>Subject</th><th>Date</th></thead>
+        <thead><tr><th>From</th><th>To/cc/bcc</th><th>Subject</th><th>Date</th></thead>
         <tbody>
           <% @mails.each do |mail, filename| %>
             <tr class="mail">
               <td><%= mail.from.join(', ') %></td>
-              <td><%= mail.to.join(', ') %></td>
+              <td>
+                <%= (mail.to || []).join(', ')  %> /
+                <%= (mail.cc || []).join(', ')  %> /
+                <%= (mail.bcc || []).join(', ')  %>
+              </td>
               <td>
                 <%= mail.subject %>
                 <% if mail.html_part || mail.content_type =~ /html/ %>
