@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "MailsViewer" do
   before :all do
-    @user = User.create(email: 'test@intridea.com', name: 'Youcai Qian', login: 'tomlion')
+    @user = User.create(email: 'dingding@pragmatic.ly', name: 'Dingding Ye', login: 'dingding')
   end
   after :all do
     User.destroy_all

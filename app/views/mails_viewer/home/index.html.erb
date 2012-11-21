@@ -2,7 +2,6 @@
 <html>
 <head>
   <title>Mailer</title>
-  <%= stylesheet_link_tag "http://twitter.github.com/bootstrap/assets/css/bootstrap-1.2.0.min.css" %>
   <%= stylesheet_link_tag "mails_viewer" %>
   <%= javascript_include_tag "mails_viewer" %>
   <%= csrf_meta_tags %>
@@ -18,16 +17,20 @@
             <tr class="mail">
               <td><%= mail.from.join(', ') %></td>
               <td><%= mail.to.join(', ') %></td>
-              <% if mail.html_part.present? %>
-                <td>
-                  <%= mail.subject %>
-                  <a href="<%= email_path(filename, :raw) %>" class="raw">raw</a>
-                  <a href="<%= email_path(filename, :html) %>" class="html">html</a>
-                </td>
-              <% else %>
-                <% t = mail.content_type =~ /^text\/html;/ ? :html : :raw %>
-                <td><a href="<%= email_path(filename, t) %>" class="<%= t %>"><%= mail.subject %></a></td>
-              <% end %>
+              <td>
+                <%= mail.subject %>
+                <% if mail.html_part || mail.content_type =~ /html/ %>
+                  <a href="<%= email_path(filename, :html) %>" class="html preview">html</a>
+                <% end %>
+                <% if mail.text_part || mail.content_type =~ /plain/ %>
+                  <a href="<%= email_path(filename, :plain) %>" class="plain preview">plain</a>
+                <% end %>
+
+                <% mail.attachments.each do |attachment| %>
+                  <a href="<%= attachment_path(filename, attachment.filename) %>" class="attachment preview"><%= attachment.filename %></a>
+                <% end %>
+                <a href="<%= email_path(filename, :raw) %>" class="raw">raw</a>
+              </td>
               <td><%= mail.date.to_s(:long) %></td>
             </tr>
           <% end %>

@@ -4,7 +4,7 @@
 $(function() {
   $.livequery.registerPlugin("tablesorter", "tablesorterPager");
 
-  $('.mail a.html').livequery(function() {
+  $('.mail a.preview').livequery(function() {
     console.log(this);
     $(this).colorbox({width:"80%", height:"80%", iframe:true});
   });
