@@ -1,5 +1,5 @@
 Mail::FileDelivery.class_eval do
-  # We need to save the mail to seperate files when have several destination addresses
+  # We need to save the mail to separate files when have several destination addresses
   # So we generate different file name and save them.
   def deliver!(mail)
     if ::File.respond_to?(:makedirs)
